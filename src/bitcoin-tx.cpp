@@ -54,10 +54,10 @@ static int AppInitRawTx(int argc, char* argv[])
     if (argc<2 || gArgs.IsArgSet("-?") || gArgs.IsArgSet("-h") || gArgs.IsArgSet("-help"))
     {
         // First part of help message is specific to this utility
-        std::string strUsage = strprintf(_("%s vertcoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = strprintf(_("%s garlicoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
-              "  vertcoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded vertcoin transaction") + "\n" +
-              "  vertcoin-tx [options] -create [commands]   " + _("Create hex-encoded vertcoin transaction") + "\n" +
+              "  garlicoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded garlicoin transaction") + "\n" +
+              "  garlicoin-tx [options] -create [commands]   " + _("Create hex-encoded garlicoin transaction") + "\n" +
               "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());
@@ -801,7 +801,7 @@ static int CommandLineRawTx(int argc, char* argv[])
             if (argc < 2)
                 throw std::runtime_error("too few parameters");
 
-            // param: hex-encoded vertcoin transaction
+            // param: hex-encoded garlicoin transaction
             std::string strHexTx(argv[1]);
             if (strHexTx == "-")                 // "-" implies standard input
                 strHexTx = readStdin();

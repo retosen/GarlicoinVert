@@ -158,16 +158,16 @@
         <translation>Otvori &amp;URI...</translation>
     </message>
     <message>
-        <source>Send coins to a Vertcoin address</source>
-        <translation>Pošalji novčiće na Vertcoin adresu</translation>
+        <source>Send coins to a garlicoin address</source>
+        <translation>Pošalji novčiće na garlicoin adresu</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Proveri poruku...</translation>
     </message>
     <message>
-        <source>Vertcoin</source>
-        <translation>Vertcoin</translation>
+        <source>garlicoin</source>
+        <translation>garlicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -404,10 +404,10 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>vertcoin-core</name>
+    <name>garlicoin-core</name>
     <message>
-        <source>Vertcoin Core</source>
-        <translation>Vertcoin Core</translation>
+        <source>garlicoin Core</source>
+        <translation>garlicoin Core</translation>
     </message>
     <message>
         <source>Information</source>

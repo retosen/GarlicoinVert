@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2016 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Vertcoin Developers
+// Copyright (c) 2014-2017 The garlicoin Developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -124,13 +124,13 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x4af38ca0e323c0a5226208a73b7589a52c030f234810cf51e13e3249fc0123e7"));
 
         
-        vSeeds.emplace_back("useast1.vtconline.org", true); // James Lovejoy
-        vSeeds.emplace_back("vtc.gertjaap.org", true); // Gert-Jaap Glasbergen
-        vSeeds.emplace_back("seed.vtc.bryangoodson.org", true); // Bryan Goodson
+        vSeeds.emplace_back("useast1.GRLConline.org", true); // James Lovejoy
+        vSeeds.emplace_back("GRLC.gertjaap.org", true); // Gert-Jaap Glasbergen
+        vSeeds.emplace_back("seed.GRLC.bryangoodson.org", true); // Bryan Goodson
         vSeeds.emplace_back("dnsseed.pknight.ca", true); // pknight
         vSeeds.emplace_back("seed.orderofthetaco.org", true); // Eric (etang600)
         vSeeds.emplace_back("seed.alexturek.org", true); // Alex Turek
-        vSeeds.emplace_back("vertcoin.mbl.cash", true); // jk_14
+        vSeeds.emplace_back("garlicoin.mbl.cash", true); // jk_14
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,71);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -138,7 +138,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
 
-        bech32_hrp = "vtc";
+        bech32_hrp = "GRLC";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
 
@@ -225,8 +225,8 @@ public:
         // nodes with support for servicebits filtering should be at the top
         vSeeds.emplace_back("jlovejoy.mit.edu", false);
         vSeeds.emplace_back("gertjaap.ddns.net", false);
-        vSeeds.emplace_back("fr1.vtconline.org", false);
-        vSeeds.emplace_back("tvtc.vertcoin.org", false);
+        vSeeds.emplace_back("fr1.GRLConline.org", false);
+        vSeeds.emplace_back("tGRLC.garlicoin.org", false);
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,74);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -234,7 +234,7 @@ public:
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x35, 0x87, 0xCF};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x35, 0x83, 0x94};
 
-        bech32_hrp = "tvtc";
+        bech32_hrp = "tGRLC";
 
         vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
 

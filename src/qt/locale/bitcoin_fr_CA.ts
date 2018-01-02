@@ -154,6 +154,6 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>vertcoin-core</name>
+    <name>garlicoin-core</name>
     </context>
 </TS>

@@ -234,7 +234,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
             total += subtotal;
         }
         else
-        {   // User-entered vertcoin address / amount:
+        {   // User-entered garlicoin address / amount:
             if(!validateAddress(rcp.address))
             {
                 return InvalidAddress;
@@ -325,7 +325,7 @@ WalletModel::SendCoinsReturn WalletModel::sendCoins(WalletModelTransaction &tran
                 rcp.paymentRequest.SerializeToString(&value);
                 newTx->vOrderForm.push_back(make_pair(key, value));
             }
-            else if (!rcp.message.isEmpty()) // Message from normal vertcoin:URI (vertcoin:123...?message=example)
+            else if (!rcp.message.isEmpty()) // Message from normal garlicoin:URI (garlicoin:123...?message=example)
                 newTx->vOrderForm.push_back(make_pair("Message", rcp.message.toStdString()));
         }
 

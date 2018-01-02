@@ -110,16 +110,16 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>Send coins to a Vertcoin address</source>
-        <translation>Enviar monedas a una dirección Vertcoin</translation>
+        <source>Send coins to a garlicoin address</source>
+        <translation>Enviar monedas a una dirección garlicoin</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Cambie la clave utilizada para el cifrado del monedero</translation>
     </message>
     <message>
-        <source>Vertcoin</source>
-        <translation>Vertcoin</translation>
+        <source>garlicoin</source>
+        <translation>garlicoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -437,7 +437,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>vertcoin-core</name>
+    <name>garlicoin-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciones:</translation>
