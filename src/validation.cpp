@@ -276,7 +276,7 @@ bool CheckSequenceLocks(const CTransaction &tx, int flags, LockPoints* lp, bool 
 
     CBlockIndex* tip = chainActive.Tip();
     assert(tip != nullptr);
-    
+
     CBlockIndex index;
     index.pprev = tip;
     // CheckSequenceLocks() uses chainActive.Height()+1 to evaluate
@@ -1032,11 +1032,11 @@ bool ReadBlockFromDisk(CBlock& block, const CDiskBlockPos& pos, int nHeight, con
     catch (const std::exception& e) {
         return error("%s: Deserialize or I/O error - %s at %s", __func__, e.what(), pos.ToString());
     }
-    
-    
+
+
 
     // Check the header
-    if (!CheckProofOfWork(block.GetPoWHash(nHeight), block.nBits, consensusParams))
+    if (!CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams))
         return error("ReadBlockFromDisk: Errors in block header at %s", pos.ToString());
 
     return true;
@@ -1060,10 +1060,10 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     CAmount nSubsidy = 50 * COIN;
     // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
     nSubsidy >>= halvings;
-    
+
     if(nSubsidy <= 0)
       nSubsidy = 0;
-    
+
     return nSubsidy;
 }
 
@@ -1620,7 +1620,7 @@ static unsigned int GetBlockScriptFlags(const CBlockIndex* pindex, const Consens
     // Enforce P2SH (BIP16)
     flags |= SCRIPT_VERIFY_P2SH;
 
-    // Start enforcing CHECKLOCKTIMEVERIFY (BIP65) and DERSIG (BIP66) rule    
+    // Start enforcing CHECKLOCKTIMEVERIFY (BIP65) and DERSIG (BIP66) rule
     if (VersionBitsState(pindex->pprev, consensusparams, Consensus::DEPLOYMENT_NVERSIONBIPS, versionbitscache) == THRESHOLD_ACTIVE) {
         flags |= SCRIPT_VERIFY_CHECKLOCKTIMEVERIFY;
         flags |= SCRIPT_VERIFY_DERSIG;
@@ -2826,7 +2826,7 @@ static bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state,
     }
 
     // Check proof of work matches claimed amount
-    if (fCheckPOW && !CheckProofOfWork(block.GetPoWHash(nHeight), block.nBits, consensusParams))
+    if (fCheckPOW && !CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams))
         return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed");
 
     return true;
@@ -2991,7 +2991,7 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationSta
     /*
          garlicoin <= 0.10.0.2 has a bug left behind from years ago where it never rejected old nVersion numbers
          so we shouldn't reject nVersion < VERSIONBITS_TOP_BITS blocks until SegWit has been enabled
-    */  
+    */
     if(block.nVersion < VERSIONBITS_TOP_BITS && IsWitnessEnabled(pindexPrev, params.GetConsensus())) {
             return state.Invalid(false, REJECT_OBSOLETE, strprintf("bad-version(0x%08x)", block.nVersion),
                                  strprintf("rejected nVersion=0x%08x block", block.nVersion));
